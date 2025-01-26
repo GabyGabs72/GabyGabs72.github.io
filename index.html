@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio Climático</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2d6a4f;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #2d6a4f;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        nav a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .menu-hamburguesa {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-hamburguesa div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .menu.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #2d6a4f;
+            z-index: 10;
+            padding: 10px 0;
+        }
+
+        .hero {
+            background-color: #d8f3dc;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        section {
+            display: none;
+            padding: 20px;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        .info-point {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: #ff6347;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .info-popup {
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: none;
+            width: 200px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        #mapa-contenedor {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: url('mapa.png') no-repeat center/cover;
+            margin: 20px 0;
+        }
+
+        .widget {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 20;
+            max-width: 300px;
+        }
+
+        footer {
+            background-color: #2d6a4f;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+
+            .menu-hamburguesa {
+                display: flex;
+            }
+
+            .menu a {
+                margin: 5px 0;
+                text-align: center;
+            }
+
+            .widget {
+                top: auto;
+                bottom: 20px;
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cambio Climático 🌍</h1>
+    </header>
+    <nav>
+        <div class="menu-hamburguesa" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu">
+            <a href="#inicio" onclick="mostrarSeccion('inicio')">Inicio 🏡</a>
+            <a href="#datos" onclick="mostrarSeccion('widget')">Datos Curiosos 🧐</a>
+            <a href="#consejos" onclick="mostrarSeccion('consejos')">Consejos 🌱</a>
+            <a href="#tips" onclick="mostrarSeccion('tips')">Tips 💡</a>
+            <a href="#informacion" onclick="mostrarSeccion('informacion')">Información 📚</a>
+            <a href="#widget" onclick="mostrarSeccion('mapa')">Mapa Interactivo 🗺️</a>
+        </div>
+    </nav>
+    <section class="hero active" id="inicio">
+        <h1>Bienvenidos a la Página del Cambio Climático</h1>
+        <p>Descubre cómo el cambio climático está afectando nuestro planeta y cómo podemos marcar la diferencia. 🌎🌱</p>
+    </section>
+    <section id="widget">
+        <h2>Datos Curiosos sobre el Cambio Climático 🌡️</h2>
+        <ul>
+            <li>El año más cálido registrado fue 2016 🏆🌞.</li>
+            <li>El Ártico se calienta casi tres veces más rápido que el resto del mundo 🐧❄️.</li>
+            <li>Más del 90% del exceso de calor es absorbido por los océanos 🌊🔥.</li>
+            <li>El cambio climático está provocando la desaparición de especies animales únicas 🦏🐆.</li>
+            <li>Los patrones climáticos extremos, como huracanes y sequías, están aumentando 🌪️💧.</li>
+        </ul>
+    </section>
+    <section id="consejos">
+        <h2>Consejos para Evitar el Cambio Climático ♻️</h2>
+        <ul>
+            <li>Reduce el consumo de carne 🥩➡️🥗.</li>
+            <li>Usa transporte público o camina 🚶‍♂️🚆.</li>
+            <li>Planta árboles y cuida la naturaleza 🌳🌻.</li>
+            <li>Apaga las luces cuando no las necesites 💡🚫.</li>
+            <li>Reduce, reutiliza y recicla ♻️.</li>
+            <li>Adopta fuentes de energía renovable como paneles solares ⚡🌞.</li>
+        </ul>
+    </section>
+    <section id="tips">
+        <h2>Tips para Luchar contra el Cambio Climático 🌿</h2>
+        <ul>
+            <li>Haz un consumo responsable de recursos 🌍💧.</li>
+            <li>Apoya políticas ecológicas y energías renovables ⚡🌞.</li>
+            <li>Usa menos plástico y promueve alternativas ecológicas 🛍️🌍.</li>
+            <li>Participa en iniciativas de limpieza comunitaria 🧹🏘️.</li>
+            <li>Fomenta la educación ambiental en tu comunidad 📖🌱.</li>
+        </ul>
+    </section>
+    <section id="informacion">
+        <h2>Anécdotas para todo tipo de audiencia📖</h2>
+        <h3>&copy; Extraido de artículos de la ONU sobre el calentamiento global y sobre las causas y efectos del calentamiento global🌐☀️</h3>
+        <p>El cambio climático, impulsado por emisiones récord de gases de efecto invernadero, está generando desastres naturales más frecuentes, degradación ambiental, inseguridad alimentaria y pérdidas económicas globales. Fenómenos como el aumento del nivel del mar, el derretimiento del Ártico y eventos meteorológicos extremos evidencian su impacto. Sin embargo, aún es posible revertir esta crisis a través de acciones colectivas audaces y coordinadas.</p>
+        <p>El cambio climático es causado por actividades humanas como la quema de combustibles fósiles, la deforestación y la agricultura. Esto genera gases de efecto invernadero que provocan temperaturas más altas, eventos climáticos extremos, aumento del nivel del mar y pérdida de biodiversidad. Reducir las emisiones y adoptar prácticas sostenibles es clave para mitigar sus efectos.</p>
+        <h3>Anécdota Infantil 🧸</h3>
+        <p>En un pequeño pueblo rodeado de colinas y praderas, un grupo de niños decidió hacer algo especial para salvar su hogar y el mundo entero. Habían escuchado a los adultos hablar sobre un "monstruo invisible" llamado cambio climático, que estaba causando tormentas más fuertes, veranos más calurosos y ríos cada vez más secos. Al principio, se sentían pequeños e indefensos ante un problema tan grande, pero una idea brillante surgió entre ellos.
+
+            "Si el monstruo invisible está dañando nuestro planeta, ¡plantemos árboles para luchar contra él!", exclamó Sofía, una niña de ojos brillantes y espíritu decidido. Todos estuvieron de acuerdo, y pronto comenzaron a organizarse.
+            Cada día después de la escuela, los niños se reunían en un terreno vacío cerca del parque. Llevaban palas, regaderas y pequeñas plántulas de árboles que habían recolectado con la ayuda de sus familias y vecinos. A cada árbol le daban un nombre y lo marcaban en un mapa que llamaron "El mapa de las victorias".
+            Mientras trabajaban, se imaginaban que cada árbol era como un guerrero valiente enfrentándose al monstruo invisible. "¡Este roble es para limpiar el aire que respiramos!", decía Tomás mientras plantaba una semilla. "¡Este pino será un refugio para los pájaros!", agregaba Ana mientras cavaba un agujero más profundo.
+            A medida que pasaban las semanas, algo mágico comenzó a suceder. El terreno vacío empezó a transformarse en un pequeño bosque, y el pueblo entero se involucró en la misión. Los adultos comenzaron a traer más semillas, compartir consejos sobre cómo cuidar las plantas y hasta donaron compost casero para nutrir el suelo.
+            Los niños no solo estaban plantando árboles; también aprendieron sobre el cambio climático y compartieron lo que sabían con sus amigos y familias. Hicieron carteles con frases como "¡Cada árbol cuenta!" y "Juntos podemos vencer al monstruo invisible". Muy pronto, su esfuerzo se convirtió en una inspiración para otros pueblos cercanos.
+            Al cabo de un año, el lugar estaba irreconocible: un bosque joven lleno de vida, con insectos, aves y hasta pequeños animales que habían encontrado un nuevo hogar. Los niños miraron con orgullo lo que habían logrado y entendieron algo importante: aunque el cambio climático parecía un monstruo inmenso, ellos eran más fuertes porque trabajaban unidos.
+            Ese día, mientras se sentaban bajo la sombra de un árbol recién plantado, Sofía sonrió y dijo: "Tal vez no podamos vencer al monstruo invisible de un día para otro, pero con cada árbol que plantamos, lo hacemos más débil. ¡Y eso ya es una gran victoria para el planeta!" 🌳💚
+            Y así, su pequeña misión siguió creciendo, enseñándole al mundo que incluso los actos más pequeños pueden hacer una gran diferencia cuando se hacen con amor y esperanza.</p>
+        <h4>&copy; Créditos a GabyGabsShow</h4>
+        <h3>Anécdota para Adultos 🌍</h3>
+        <p>En un pueblo costero rodeado por el vasto océano, sus habitantes enfrentaban un desafío creciente: el cambio climático. El nivel del mar subía, las tormentas eran más frecuentes y fuertes, y los peces, que durante generaciones habían sido su principal fuente de sustento, comenzaban a desaparecer. La situación parecía insostenible, pero los habitantes no estaban dispuestos a rendirse.
+            Todo comenzó cuando Elena, una joven bióloga nacida en el pueblo, regresó después de estudiar en la ciudad. Había visto cómo otros lugares estaban adaptándose y decidió que su hogar también podía hacerlo. "No podemos detener el mar, pero podemos aprender a convivir con él", dijo en una reunión comunitaria.
+            Su propuesta era ambiciosa: restaurar los humedales cercanos al pueblo. Aunque durante años muchos los habían visto como terrenos inútiles, Elena explicó que estos ecosistemas eran como "escudos naturales", capaces de absorber el impacto de las tormentas, reducir las inundaciones y servir como refugio para muchas especies.
+            Al principio, algunos se mostraron escépticos. "¿De qué servirá esto si el mar sigue subiendo?", preguntó un pescador mayor. Pero poco a poco, las palabras de Elena y su entusiasmo convencieron a más personas. Con herramientas prestadas y mucha voluntad, comenzaron a trabajar.
+            Día tras día, el pueblo se unió para limpiar los humedales de basura, plantar manglares y reintroducir plantas nativas que habían desaparecido. Aprendieron a construir barreras naturales con juncos y a crear canales que permitieran que el agua fluyera sin inundar sus hogares. También participaron en talleres donde aprendieron sobre prácticas sostenibles, como pescar de manera responsable y usar menos plásticos que terminaban en el océano.
+            Con el tiempo, los cambios comenzaron a notarse. Los manglares crecieron fuertes, y los humedales se llenaron de aves, cangrejos y peces. Durante una tormenta particularmente fuerte, los habitantes se sorprendieron al ver cómo el agua, en lugar de inundar sus casas, era absorbida por los humedales restaurados.
+            La transformación no pasó desapercibida. Científicos, periodistas y visitantes de otros pueblos llegaron para ver lo que habían logrado. Inspirados por su ejemplo, otras comunidades comenzaron proyectos similares, adaptando las lecciones del pueblo costero a sus propias realidades.
+            Ahora, el pueblo no solo es un lugar más seguro, sino también un símbolo de esperanza y resiliencia. Los niños aprenden en la escuela sobre la importancia de cuidar los humedales y el océano, y los adultos comparten orgullosos sus conocimientos con quienes los visitan.
+            Un día, durante una celebración en honor a su trabajo colectivo, Elena tomó la palabra y dijo: "No podemos controlar lo que el cambio climático nos trae, pero sí podemos decidir cómo enfrentarlo. Aquí hemos demostrado que, cuando trabajamos juntos, podemos construir un futuro mejor, no solo para nosotros, sino para todos".
+            Y así, el pueblo costero se convirtió en un faro de inspiración, recordándole al mundo que la acción local puede tener un impacto global. 👩‍🌾🌊</p>
+        <h4>&copy; Créditos a GabyGabsShow</h4>
+        <h2>Información importante📖</h2>
+        <p>La reciente retirada de Estados Unidos del Acuerdo de París bajo la administración de Trump marca un golpe significativo a los esfuerzos globales contra el cambio climático. EE. UU., como uno de los principales emisores de gases de efecto invernadero, se desvincula de compromisos clave como la reducción de emisiones y el apoyo financiero a países en desarrollo. Esto podría desincentivar a otras naciones y aumentar los desafíos globales en la lucha climática. Sin embargo, sectores renovables en EE. UU. mantienen impulso a nivel estatal y local. 
+           Lee más en [El País](https://elpais.com/clima-y-medio-ambiente/2025-01-21/las-claves-de-la-salida-de-ee-uu-del-acuerdo-de-paris-que-ocurrira-con-la-lucha-climatica-ahora.html).</p>
+        <h4>&copy; Créditos a el periódico proveniente de España "El País" que se especializa en noticias internacionales, nacionales, economía, cultura, tecnología, deportes y medio ambiente. Es conocido por su cobertura detallada y análisis profundo de temas de actualidad🌐</h4>
+    <section id="mapa">
+        <h2>Mapa Interactivo del Cambio Climático 🗺️</h2>
+        <div id="mapa-contenedor">
+            <div class="widget">
+                <h3>Impactos Clave 🌏</h3>
+                <p>Explora cómo el cambio climático afecta distintas regiones del mundo. ¡Interactúa con el mapa!</p>
+            </div>
+            <div class="info-point" style="top: 50px; left: 100px;" data-info="El derretimiento del Ártico está afectando los ecosistemas polares. 🐻‍❄️❄️"></div>
+            <div class="info-point" style="top: 200px; left: 300px;" data-info="El aumento del nivel del mar amenaza islas como las Maldivas 🏝️🌊."></div>
+            <div class="info-point" style="top: 350px; left: 500px;" data-info="Las olas de calor extremo son cada vez más comunes 🥵🔥."></div>
+            <div class="info-point" style="top: 150px; left: 400px;" data-info="La Amazonía enfrenta una deforestación acelerada 🌳🚨."></div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 @GabyGabsShow. Todos los derechos reservados. 💻🌍</p>
+    </footer>
+    <script>
+        function mostrarSeccion(id) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+
+        document.querySelectorAll('.info-point').forEach(point => {
+            point.addEventListener('mouseenter', function () {
+                const info = this.getAttribute('data-info');
+                const popup = document.createElement('div');
+                popup.className = 'info-popup';
+                popup.innerText = info;
+                document.body.appendChild(popup);
+
+                const rect = this.getBoundingClientRect();
+                popup.style.left = `${rect.left + window.scrollX + 20}px`;
+                popup.style.top = `${rect.top + window.scrollY - 10}px`;
+                popup.style.display = 'block';
+            });
+
+            point.addEventListener('mouseleave', function () {
+                document.querySelectorAll('.info-popup').forEach(popup => popup.remove());
+            });
+        });
+    </script>
+</body>
+</html>

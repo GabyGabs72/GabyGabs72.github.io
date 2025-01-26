@@ -1,0 +1,184 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif; /* Tipografía principal */
+    background-color: #f4f9f9; /* Fondo suave */
+    color: #2c3e50; /* Color de texto principal */
+    line-height: 1.8;
+    scroll-behavior: smooth; /* Transición suave al desplazarse */
+}
+
+/* Estilos del header */
+header {
+    background-color: #2d6a4f; /* Verde natural */
+    color: #ffffff;
+    padding: 1.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Estilos del menú de navegación */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background-color: #1b4332; /* Verde oscuro */
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Menú pegajoso */
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #2d6a4f; /* Verde intenso */
+    background-color: #74c69d; /* Verde claro */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Sección hero */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #74c69d, #52b788); /* Degradado natural */
+    color: #ffffff;
+    border-bottom: 5px solid #1b4332;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Secciones generales */
+section {
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: #2d6a4f;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+section ul li {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+section ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #74c69d;
+    font-size: 1.5rem;
+}
+
+/* Estilos para el mapa */
+#mapa-contenedor {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: url('/img/mapa.jpg') no-repeat center/cover;
+    border: 3px solid #1b4332;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin: 3rem 0;
+}
+
+/* Estilos del footer */
+footer {
+    background-color: #2d6a4f;
+    color: #ffffff;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1rem;
+    margin-top: 3rem;
+    border-top: 5px solid #1b4332;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Estilo para las burbujas de información en el mapa */
+.info-point {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6347;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-point:hover {
+    transform: scale(1.2);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.info-popup {
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+    width: 220px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Transiciones y efectos adicionales */
+* {
+    transition: all 0.3s ease;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
