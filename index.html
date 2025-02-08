@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cambio Climático</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
         }
 
+        
         header {
-            background-color: #2d6a4f;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #2c7a7b;
+            color: white
         }
 
         nav {
@@ -29,6 +32,25 @@
             position: relative;
         }
 
+        .logo {
+            width: 50px;
+            height: 50px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #2c7a7b;
+            color: white;
+            margin-top: 20px;
+        }
         nav a {
             margin: 0 10px;
             color: white;
@@ -156,6 +178,7 @@
                 bottom: 20px;
                 left: 20px;
             }
+            
         }
     </style>
 </head>
@@ -175,7 +198,6 @@
             <a href="#consejos" onclick="mostrarSeccion('consejos')">Consejos 🌱</a>
             <a href="#tips" onclick="mostrarSeccion('tips')">Tips 💡</a>
             <a href="#informacion" onclick="mostrarSeccion('informacion')">Información 📚</a>
-            <a href="#widget" onclick="mostrarSeccion('mapa')">Mapa Interactivo 🗺️</a>
         </div>
     </nav>
     <section class="hero active" id="inicio">
@@ -246,12 +268,7 @@
         <p>La reciente retirada de Estados Unidos del Acuerdo de París bajo la administración de Trump marca un golpe significativo a los esfuerzos globales contra el cambio climático. EE. UU., como uno de los principales emisores de gases de efecto invernadero, se desvincula de compromisos clave como la reducción de emisiones y el apoyo financiero a países en desarrollo. Esto podría desincentivar a otras naciones y aumentar los desafíos globales en la lucha climática. Sin embargo, sectores renovables en EE. UU. mantienen impulso a nivel estatal y local. 
            Lee más en [El País](https://elpais.com/clima-y-medio-ambiente/2025-01-21/las-claves-de-la-salida-de-ee-uu-del-acuerdo-de-paris-que-ocurrira-con-la-lucha-climatica-ahora.html).</p>
         <h4>&copy; Créditos a el periódico proveniente de España "El País" que se especializa en noticias internacionales, nacionales, economía, cultura, tecnología, deportes y medio ambiente. Es conocido por su cobertura detallada y análisis profundo de temas de actualidad🌐</h4>
-    <section id="mapa">
-        <h2>Mapa Interactivo del Cambio Climático 🗺️</h2>
-        <div id="mapa-contenedor">
-            <div class="widget">
-                <h3>Impactos Clave 🌏</h3>
-                <p>Explora cómo el cambio climático afecta distintas regiones del mundo. ¡Interactúa con el mapa!</p>
+
             </div>
             <div class="info-point" style="top: 50px; left: 100px;" data-info="El derretimiento del Ártico está afectando los ecosistemas polares. 🐻‍❄️❄️"></div>
             <div class="info-point" style="top: 200px; left: 300px;" data-info="El aumento del nivel del mar amenaza islas como las Maldivas 🏝️🌊."></div>
